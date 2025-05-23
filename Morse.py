@@ -62,3 +62,6 @@ def main():
             break
         else:
             print("Invalid choice. Please select 1, 2, or 3.")
+
+if __name__ == "__main__":
+    main()
