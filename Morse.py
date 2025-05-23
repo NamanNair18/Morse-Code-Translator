@@ -20,3 +20,8 @@ def text_to_morse(text):
         else:
             return f"Error: Character '{char}' not supported in Morse code."
     return ' '.join(morse_code)
+def morse_to_text(morse):
+    # Convert Morse code to text
+    morse = morse.strip()
+    morse_words = morse.split('   ')  # Words separated by three spaces
+    result = []
