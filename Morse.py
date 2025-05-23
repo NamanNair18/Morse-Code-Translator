@@ -38,3 +38,12 @@ def morse_to_text(morse):
                 return f"Error: Invalid Morse code sequence '{letter}'."
         result.append(decoded_word)
     return ' '.join(result)
+
+def main():
+    """Main function to run the Morse code translator."""
+    while True:
+        print("\nMorse Code Translator")
+        print("1. Text to Morse")
+        print("2. Morse to Text")
+        print("3. Exit")
+        choice = input("Choose an option (1-3): ")
