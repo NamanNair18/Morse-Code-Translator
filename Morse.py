@@ -9,9 +9,10 @@ MORSE_CODE_DICT = {
     '0': '-----', ' ': ' '
 }
 
-REVERSE_CODE_MORSE = {value: key for key, value in MORSE_CODE_DICT.items()}
+REVERSE_MORSE_DICT = {value: key for key, value in MORSE_CODE_DICT.items()}
 
 def text_to_morse(text):
+    # Convert text to Morse code.
     text = text.upper()
     morse_code = []
     for char in text:
@@ -20,8 +21,20 @@ def text_to_morse(text):
         else:
             return f"Error: Character '{char}' not supported in Morse code."
     return ' '.join(morse_code)
+
 def morse_to_text(morse):
     # Convert Morse code to text
     morse = morse.strip()
     morse_words = morse.split('   ')  # Words separated by three spaces
     result = []
+
+    for word in morse_words:
+        letters = word.split(' ')
+        decoded_word = ''
+        for letter in letters:
+            if letter in REVERSE_MORSE_DICT:
+                decoded_word += REVERSE_MORSE_DICT[letter]
+            else:
+                return f"Error: Invalid Morse code sequence '{letter}'."
+        result.append(decoded_word)
+    return ' '.join(result)
