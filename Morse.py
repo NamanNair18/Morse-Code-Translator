@@ -47,3 +47,18 @@ def main():
         print("2. Morse to Text")
         print("3. Exit")
         choice = input("Choose an option (1-3): ")
+
+        if choice == '1':
+            text = input("Enter text to convert to Morse code: ")
+            result = text_to_morse(text)
+            print(f"Morse code: {result}")
+        elif choice == '2':
+            print("Enter Morse code (use '.' and '-' for code, single space between letters, three spaces between words):")
+            morse = input()
+            result = morse_to_text(morse)
+            print(f"Text: {result}")
+        elif choice == '3':
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please select 1, 2, or 3.")
