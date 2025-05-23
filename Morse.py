@@ -40,7 +40,7 @@ def morse_to_text(morse):
     return ' '.join(result)
 
 def main():
-    """Main function to run the Morse code translator."""
+    # Main function to run the Morse code translator.
     while True:
         print("\nMorse Code Translator")
         print("1. Text to Morse")
